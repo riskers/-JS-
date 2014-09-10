@@ -1,4 +1,4 @@
-//根据class获取元素
+#//根据class获取元素
 function getByClass(oParent,sClass){
 	var aEle = oParent.getElementsByTagName('*');
 	var aRes = [] ;
@@ -10,7 +10,7 @@ function getByClass(oParent,sClass){
 	return aRes ;
 }
 
-//注册事件的兼容
+#//注册事件的兼容
 function addEvent(obj,sEvent,fn){
 	  if(obj.attachEvent){
 	        obj.attachEvent('on'+sEvent,fn);
@@ -19,7 +19,7 @@ function addEvent(obj,sEvent,fn){
 	  }
 }
 
-//获取样式的兼容
+#//获取样式的兼容
 function getStyle(obj,attr){
 	if(obj.currentStyle){
 		return obj.currentStyle[attr] ;
