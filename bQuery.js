@@ -27,3 +27,14 @@ function getStyle(obj,attr){
 		return getComputedStyle(obj,false)[attr] ;
 	}
 }
+
+
+//实现insertAfter
+function insertAfter(newEle,tarEle){
+	var oParent = tarEle.parentNode;
+	if(oParent.lastChild==tarEle){
+		oParent.append(newEle);
+	}else{
+		oParent.insertBefore(newEle,tarEle.nextSibling)
+	}
+}
