@@ -1,9 +1,12 @@
 var EventUtil = {
     addHandler : function(ele,type,handler){
+        var fn = function(){
+            handler.call(ele) ;
+        }
         if(ele.addEventListener){
-            ele.addEventListener(type,handler,false)
+            ele.addEventListener(type,fn,false)
         }else{
-            ele.attachEvent('on'+type,handler) ;
+            ele.attachEvent('on'+type,fn) ;
         }
     } ,
     getEvent : function(event){
