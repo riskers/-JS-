@@ -25,5 +25,26 @@ var EventUtil = {
         }else{
             event.cancelBubble = true ;
         }
+    } ,
+    getWheelDelta : function(event){
+        var bDown = true ;
+
+        if(event.wheelDelta){
+            //IE
+            if(event.wheelDelta<0){
+                bDown = true ;
+            }else{
+                bDown = false ;
+            }
+        }else{
+            //FF
+            if(event.detail>0){
+                bDown = true ;
+            }else{
+                bDown = false ;
+            }
+        }
+
+        return bDown ;
     }
 }
