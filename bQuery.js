@@ -10,7 +10,7 @@ function getByClass(oParent,sClass){
 	return aRes ;
 }
 
-//注册事件的兼容
+//注册事件的兼容(包括兼容作用域)
 function addEvent(obj,sEvent,fn){
 	function handle(){
         	return fn.call(oEle)
