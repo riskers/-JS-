@@ -10,18 +10,6 @@ function getByClass(oParent,sClass){
 	return aRes ;
 }
 
-//注册事件的兼容(包括兼容作用域)
-function addEvent(obj,sEvent,fn){
-	function handle(){
-        	return fn.call(oEle)
-    	}
-	if(obj.attachEvent){
-	    obj.attachEvent('on'+sEvent,handle);
-	}else{
-    		obj.addEventListener(sEvent,handle,false);
-	}
-}
-
 //获取样式的兼容
 function getStyle(obj,attr){
 	if(obj.currentStyle){
