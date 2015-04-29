@@ -13,12 +13,12 @@ function getByClass(oParent,sClass){
 //注册事件的兼容
 function addEvent(obj,sEvent,fn){
 	function handle(){
-        return fn.call(oEle)
-    }
+        	return fn.call(oEle)
+    	}
 	if(obj.attachEvent){
 	    obj.attachEvent('on'+sEvent,handle);
 	}else{
-    	obj.addEventListener(sEvent,handle,false);
+    		obj.addEventListener(sEvent,handle,false);
 	}
 }
 
