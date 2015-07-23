@@ -1,13 +1,15 @@
 //根据class获取元素
 function getByClass(oParent,sClass){
-	var aEle = oParent.getElementsByTagName('*');
-	var aRes = [] ;
+	var aEle = document.getElementById(oParent).getElementsByTagName('*') ;
+	var res = [] ,
+   	    reg = new RegExp("\\b"+sClass+"\\b",'i');
 	for(var i=0;i<aEle.length;i++){
-	   if(aEle[i].className==sClass){
-	        aRes.push(aEle[i]);
-	   }
+		var targetClass = aEle[i].className ;
+		if(reg.test(targetClass)){
+			res.push(aEle[i])
+		}
 	}
-	return aRes ;
+	return res;
 }
 
 //获取样式的兼容
